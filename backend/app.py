@@ -46,7 +46,6 @@ def recommend(song):
 
     return recommended_music_names, recommended_music_posters
 
-
 @app.route('/recommend', methods=['POST'])
 def get_recommendations():
     data = request.json

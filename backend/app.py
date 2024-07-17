@@ -64,10 +64,11 @@ def get_recommendations():
     recommendations = [{'name': name, 'album_cover_url': poster} for name, poster in zip(recommended_music_names, recommended_music_posters)]
     return jsonify(recommendations)
 
+
 @app.route('/songs', methods=['GET'])
 def get_songs():
     songs = music['song'].tolist()
     return jsonify(songs)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

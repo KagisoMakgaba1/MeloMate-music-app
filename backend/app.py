@@ -7,7 +7,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Spotify credentials
 CLIENT_ID = "8fdc230948e14e559918b13148c11fb0"

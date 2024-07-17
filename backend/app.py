@@ -46,15 +46,6 @@ def recommend(song):
 
     return recommended_music_names, recommended_music_posters
 
-st.header('Music Recommender System')
-music = pickle.load(open('df.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
-
-music_list = music['song'].values
-selected_movie = st.selectbox(
-    "Type or select a song from the dropdown",
-    music_list
-)
 
 @app.route('/recommend', methods=['POST'])
 def get_recommendations():
@@ -71,4 +62,4 @@ def get_songs():
     return jsonify(songs)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
